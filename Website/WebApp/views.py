@@ -8,8 +8,11 @@ def index(request):
 
 
 def cont(request):
-    task = Task.objects.all()
-    return render(request, 'WebApp/Contacts.html', {'title': 'Social network', 'tasks': 'title'})
+    tasks = Task.objects.all()
+    context = {
+        "tasks": tasks
+    }
+    return render(request, 'WebApp/Contacts.html', context)
 
 
 
