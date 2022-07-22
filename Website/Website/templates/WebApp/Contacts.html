@@ -28,20 +28,11 @@
 {% endif %}
 {% endfor %}
 </br>
-<form method="post">
+<form method="POST">
+        <h1 class="h3 mb-3 fw-normal">If you know additional contact information, please share it:</h1>
     {% csrf_token %}
-        {% form.title %}
-        {% form.description %}
-    <h1 class="h3 mb-3 fw-normal">If you know additional contact information, please share it:</h1>
-
-    <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Enter data">
-      <label for="floatingInput">Social network:</label>
-    </div>
-    <div class="form-floating">
-      <input type="textarea" class="form-control" id="floatingPassword" placeholder="Enter data">
-      <label for="floatingPassword">Link:</label>
-    </div>
+        {{ form.title }}
+        {{ form.description }}
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Add it</button>
     <p class="mt-5 mb-3 text-muted">© 2022</p>
